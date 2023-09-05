@@ -1,30 +1,20 @@
 public class Ques7 {
     public static void main(String[] args) {
-        System.out.println(reverse(120));
+        System.out.println(reverse(#any number));
     }
-    public  static int reverse(int x) {
-        
-        String rev ="";
-        int r;
-        if(x<0){
-            int num =x*-1;
-            String str =String.valueOf(num);
-            
-            for (int i = 0; i < str.length(); i++) {
-                rev= str.charAt(i)+rev;                
-            }
-            r=Integer.parseInt(rev);
-            return r*-1;
+    public  static int reverse(int x) {        
+        long sum=0;
+        int k=x;
+        if(x<0)
+        k=(-1)*k;
+        while(k>0){
+            sum=sum*10+x%10;
+            x=x/10;
+            k=k/10;
         }
-        else{
-            String str =String.valueOf(x);
-            
-            for (int i = 0; i < str.length(); i++) {
-                rev= str.charAt(i)+rev;                
-            }
-            r=Integer.parseInt(rev);
-            return r;
-        }
-        
+        if(sum<Math.pow(-2,31) || sum>Math.pow(2,31) )
+            return 0;
+        else 
+            return (int)sum;
     }
 }
