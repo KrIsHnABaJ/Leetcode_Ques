@@ -1,21 +1,16 @@
 
 public class Ques9 {
     public static void main(String[] args) {
-        System.out.println(isPalindrome(121));
+        System.out.println(isPalindrome(#any number));
     }
     public static boolean isPalindrome(int x) {
-        String a = String.valueOf(x);
-        String rev ="";
-        for (int index = 0; index < a.length(); index++) {
-            rev = a.charAt(index)+rev;
-            int r =Integer.parseInt(rev);
-            if(r==x){
-                return true;
-            }
-            
-
+        if (x<0 || (x!=0 && x%10==0)) return false;
+        int rev = 0;
+        while (x>rev){
+            rev = rev*10 + x%10;
+            x = x/10;
         }
-        return false;
+        return (x==rev || x==rev/10);
     }
         
 }
